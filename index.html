@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>කවුළුව 2016</title>
+		<script type="text/javascript" src="./js/jquery-3.1.0.js"></script>
+		<script type="text/javascript" src="./js/jquery.media.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.js"></script>
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<script type="text/javascript">
+			$(document).ready(function(){
+			LoadPdfViewer();
+			});
+			
+			$(window).resize(function() {
+				LoadPdfViewer();
+});
+
+			function LoadPdfViewer()
+			{
+				$('a.media').media({width:"100%", height:700});
+			}
+			
+			function ClickReport(obj)
+			{
+				var parent = $('div.media').parent();
+				$('div.media').remove();
+				var anchor = $("<a>", {href: $(obj).data("url"), "class": "media"});
+				parent.append(anchor);
+				LoadPdfViewer();
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div style="padding:10px;">
+				<div class="text-center">
+					<a class="brand">
+                <img src="./images/DharmarajaCollege_crest.jpg" width="70" height="100"/>
+				</a>
+					<h7 style="font-size:30px;">කවුළුව</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2"></div>
+				<div class="col-lg-6">
+					<a class="media" href="https://dl.dropboxusercontent.com/u/58138028/Kauluwa/1-16%20new%202015.pdf"></a>
+				</div>
+				<div class="col-lg-2">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>
+								<a onclick="ClickReport(this);" data-url="https://dl.dropboxusercontent.com/u/58138028/Kauluwa/1-16%20new%202015.pdf">කාලීන පුවත්</a>
+							</h4>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>පෙර පුවත්</h4>
+						</div>
+						<div class="panel-body">
+							<ul>
+								<li>
+									<a onclick="ClickReport(this);" data-url="https://dl.dropboxusercontent.com/u/58138028/Kauluwa/2-3-4.pdf">2016 ජුනි කලාපය</a>
+								</li>
+								<li>
+									<a onclick="ClickReport(this);" data-url="https://dl.dropboxusercontent.com/u/58138028/Kauluwa/6-8.pdf">2016 මෑයි කලාපය</a>
+								</li>
+								<li>
+									<a onclick="ClickReport(this);" data-url="https://dl.dropboxusercontent.com/u/58138028/Kauluwa/9-12%20%20new%202015%20new%2012.pdf">2016 අප්‍රේල් කලාපය</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="text-center">
+				<p>Dharmaraja College Old Boys' Union
+					<a href="https://www.facebook.com/rajansobu">@rajansobu</a>2016</p>
+			</div>
+		</div>
+	</body>
+
+</html>
